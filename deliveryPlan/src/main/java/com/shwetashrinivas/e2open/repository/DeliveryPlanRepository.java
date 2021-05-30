@@ -4,9 +4,11 @@ import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import com.shwetashrinivas.e2open.entity.DeliveryPlan;
 
+@Repository
 public interface DeliveryPlanRepository extends JpaRepository<DeliveryPlan, Integer> {
 
 	List<DeliveryPlan> findByPart(String part);
