@@ -7,14 +7,14 @@ Design/Implement a simple web application to display the Delivery Plan report wi
 In Supply Chain Planning world, the Delivery Plan (DP here after) is a report which provides information as to whether demands can be fulfilled in the requested time and quantity. From a technical perspective, DP is simply a **persisted entity** with attributes/columns like: Delivery No, Part, Depot, Customer, Due Date, Delivery Date, Quantity, Delivery Margin etc.
 
 | Delivery No | Part | Depot | Customer | Quantity | Due Date | Delivery Date | Margin |
-|--|--|--|--|--|--|--|--|--|--|--|
-|100 | Hard Disk | Beijing| CUST-1| 20| 2014-06-30| 2014-06-25| 10000€|
-|200| Processor| Beijing| CUST-1| 40| 2014-06-30 |2014-07-25 |40000€|
-|300 |Cable |Beijing| CUST-1|20 |2014-06-30 |2014-07-25|1000€|
-|400 |Hard Disk| Taiwan |CUST-2|20 |2014-06-25| 2014-06-25 |12000€|
-|500| Processor |Taiwan |CUST-2| 20 |2014-06-22 |2014-07-25 |50000€|
-|600| Cable |Taiwan |CUST-2| 20| 2014-06-30| 2014-06-22| 2000€|
-|700 |Display| Taiwan| CUST-2 |20 |2014-06-23 |2014-06-25 |70000€|
+|-------------|------|-------|----------|----------|----------|---------------|--------|
+| 100 | Hard Disk | Beijing | CUST-1| 20 | 2014-06-30| 2014-06-25| 10000€ |
+| 200 | Processor| Beijing | CUST-1| 40 | 2014-06-30 |2014-07-25 | 40000€ |
+| 300 | Cable | Beijing | CUST-1 | 20 | 2014-06-30 |2014-07-25| 1000€ |
+| 400 | Hard Disk| Taiwan | CUST-2 | 20 | 2014-06-25| 2014-06-25 | 12000€ |
+| 500 | Processor | Taiwan | CUST-2 | 20 | 2014-06-22 |2014-07-25 | 50000€ |
+| 600 | Cable | Taiwan |CUST-2 | 20 | 2014-06-30 | 2014-06-22| 2000€ |
+| 700 | Display| Taiwan| CUST-2 |20 | 2014-06-23 | 2014-06-25 | 70000€ |
 
 ## Tasks
 1. **Report** - Design/Implement a Java/JEE application to read the persisted DP and display it as a report (tabular view). The main focus is to design the different layers : database layer, business
