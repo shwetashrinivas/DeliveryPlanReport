@@ -5,7 +5,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.shwetashrinivas.e2open.entity.DeliveryPlan;
 import com.shwetashrinivas.e2open.repository.DeliveryPlanRepository;
 
@@ -25,10 +24,6 @@ public class DPServiceImpl{
 
 	List<DeliveryPlan> findByCustomer(String customer){
 		return deliveryPlanReportRepository.findByCustomer(customer);
-	}
-
-	List<DeliveryPlan> findByDateRange(LocalDate startDate, LocalDate endDate){
-		return deliveryPlanReportRepository.findByDateRange(startDate, endDate);
 	}
 
 	List<DeliveryPlan> findByDueDateBefore(LocalDate dueDate){

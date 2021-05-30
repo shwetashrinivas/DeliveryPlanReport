@@ -17,8 +17,6 @@ public interface DeliveryPlanRepository extends JpaRepository<DeliveryPlan, Inte
 
 	List<DeliveryPlan> findByCustomer(String customer);
 
-	List<DeliveryPlan> findByDateRange(LocalDate startDate, LocalDate endDate);
-
 	List<DeliveryPlan> findByDueDateBefore(LocalDate dueDate);
 
 	List<DeliveryPlan> findByOrderByCustomerAsc(String customer);

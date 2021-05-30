@@ -1,5 +1,6 @@
 package com.shwetashrinivas.e2open.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,11 +22,25 @@ import com.shwetashrinivas.e2open.service.DPServiceImpl;
 @RestController
 public class DPController {
 
-	@Autowired
-	DPServiceImpl dpService;
-
-	@Autowired
+	DPServiceImpl dpService;	
 	DeliveryPlanRepository deliveryPlanReportRepository;
+	
+	@Autowired
+	public DPController(DPServiceImpl dpService, DeliveryPlanRepository deliveryPlanReportRepository) {
+		this.dpService = dpService;
+		this.deliveryPlanReportRepository = deliveryPlanReportRepository;
+	}
+
+	@GetMapping("/view")
+	public ResponseEntity<?> viewDP(){
+		List<DeliveryPlan> deliveryPlan = new ArrayList<DeliveryPlan>();
+		deliveryPlan = deliveryPlanReportRepository.findAll();
+		
+		if (deliveryPlan.isEmpty()) {
+			return new ResponseEntity<>(deliveryPlan,HttpStatus.NO_CONTENT);
+		}
+		return new ResponseEntity<>(deliveryPlan, HttpStatus.OK);
+	}
 
 	@RequestMapping(value = "/search/{filter}/{criteria}", method = RequestMethod.GET)
 	public ResponseEntity<?> searchDP(@PathVariable("filter") final String filter,
@@ -53,4 +68,5 @@ public class DPController {
 		}
 		return new ResponseEntity<>(dpReport, HttpStatus.OK);
 	}
+	
 }
