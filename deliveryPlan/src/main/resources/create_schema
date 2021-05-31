@@ -1,0 +1,22 @@
+create database e2open;
+
+use e2open;
+
+create table deliveryPlan(
+deliveryNo int PRIMARY KEY AUTO_INCREMENT,
+part varchar(30),
+depo varchar(30),
+customer varchar(10),
+quantity int,
+dueDate date,
+deliveryDate date,
+margin decimal
+);
+
+insert into deliveryPlan values (100, 'Hard Disk', 'Beijing', 'CUST-1', 20 , 2014-06-30, 2014-06-25, 10000);
+insert into deliveryPlan values (200, 'Processor', 'Beijing', 'CUST-1', 40, 2014-06-30, 2014-07-25, 40000);
+insert into deliveryPlan values (300, 'Cable', 'Beijing', 'CUST-1', 20, 2014-06-30, 2014-07-25, 1000);
+insert into deliveryPlan values (400, 'Hard Disk', 'Taiwan', 'CUST-2', 20, 2014-06-25, 2014-06-25, 12000);
+insert into deliveryPlan values (500,'Processor', 'Taiwan', 'CUST-2', 20, 2014-06-22, 2014-07-25, 50000);
+insert into deliveryPlan values (600,'Cable', 'Taiwan', 'CUST-2', 20, 2014-06-30, 2014-06-22, 2000);
+insert into deliveryPlan values (700 ,'Display', 'Taiwan', 'CUST-2', 20, 2014-06-23, 2014-06-25, 70000);
